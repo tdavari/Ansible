@@ -10,8 +10,9 @@ asa
 iosxr
 
 [nxos]
-server1 ansible_host=192.168.10.1 ansible_port=1600 ansible_python_interpreter="/home/taha/ansible/bin/python"
-server2 ansible_host=192.168.0.2 ansible_port=1800
+#server1 ansible_host=192.168.10.1 ansible_port=1600 ansible_python_interpreter="/home/taha/ansible/bin/python"
+#server2 ansible_host=192.168.0.2 ansible_port=1800
+sandbox-nxos-1.cisco.com
 
 
 [iosxr]
