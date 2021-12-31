@@ -1,0 +1,25 @@
+# Consolidation of all groups
+[hosts:children]
+devnet
+
+# You can make groups of groups
+[devnet:children]
+iosxe
+nxos
+asa
+iosxr
+
+[nxos]
+server1 ansible_host=192.168.10.1 ansible_port=1600
+server2 ansible_host=192.168.0.2 ansible_port=1800
+
+
+[iosxr]
+server5 ansible_host=10.150.70.1 ansible_ssh_pass=password
+
+[iosxe]
+server6 ansible_host=10.160.40.3 ansible_port=77
+
+[asa]
+server3 ansible_host=10.160.40.1 ansible_port=22 ansible_user=root
+server4 ansible_host=10.160.40.2 ansible_port=4300 ansible_user=root
