@@ -2,13 +2,13 @@
 - name: Retrieve facts from Switches
   hosts: nxos
   gather_facts: False
-  vars:
-    ansible_network_os: cisco.nxos.nxos
+  #vars:
+  #  ansible_network_os: cisco.nxos.nxos
   # Ansible added new connection options for networking devices
   # to replace connection: local
   # Now connection: network_cli or httpapi are recommended
   #   Doc: https://docs.ansible.com/ansible/2.9/network/user_guide/platform_nxos.html 
-  connection: local
+  connection: network_cli
   
   tasks: 
     - name: "Retrieving NX-OS Facts"
