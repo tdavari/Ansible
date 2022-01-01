@@ -1,6 +1,6 @@
 ---
 - name: Configure Loopback Networks on Each Switch
-  hosts: switches
+  hosts: nxos
   gather_facts: False
 
   # Ansible added new connection options for networking devices
