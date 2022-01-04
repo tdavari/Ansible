@@ -12,17 +12,22 @@
   connection: network_cli
   
   tasks: 
-    - name: "Retrieving NX-OS Facts"
-      nxos_facts: 
-        # See docs for what subset options of facts are available
-        #   https://docs.ansible.com/ansible/2.9/modules/nxos_facts_module.html#nxos-facts-module 
+    - name: "config from cfg file"
+      nxos_config:
+        src: /home/taha/ansible/ansible-template/config/imam_leaf1.cfg
+        diff_against: running
 
-        #host: "{{inventory_hostname}}"
+    # - name: "Retrieving NX-OS Facts"
+    #   nxos_facts: 
+    #     # See docs for what subset options of facts are available
+    #     #   https://docs.ansible.com/ansible/2.9/modules/nxos_facts_module.html#nxos-facts-module 
 
-        #notice that default transport is ssh
-        #transport: nxapi
-        gather_subset: all
-      register: nxos_info
+    #     #host: "{{inventory_hostname}}"
 
-    - name: "Print NX-OS Facts"
-      debug: msg="{{nxos_info}}"
+    #     #notice that default transport is ssh
+    #     #transport: nxapi
+    #     gather_subset: all
+    #   register: nxos_info
+
+    # - name: "Print NX-OS Facts"
+    #   debug: msg="{{nxos_info}}"
