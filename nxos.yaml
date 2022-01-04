@@ -1,8 +1,9 @@
 ---
 - name: Retrieve facts from Switches
   hosts: nxos
+  # become: yes
   gather_facts: False
-  #vars:
+  # vars:
   #  ansible_network_os: cisco.nxos.nxos
   # Ansible added new connection options for networking devices
   # to replace connection: local
