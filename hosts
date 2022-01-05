@@ -12,15 +12,15 @@ iosxr
 [nxos]
 #server1 ansible_host=192.168.10.1 ansible_port=1600 ansible_python_interpreter="/home/taha/ansible/bin/python"
 #server2 ansible_host=192.168.0.2 ansible_port=1800
-sandbox-nxos-1.cisco.com #ansible_ssh_pass=Admin_1234! ansible_ssh_user=admin
+lct_leaf1 ansible_host=10.10.20.173 #ansible_ssh_pass=Admin_1234! ansible_ssh_user=admin
+lct_leaf2 ansible_host=10.10.20.174
+imam_leaf1 ansible_host=10.10.20.175
+imam_leaf2 ansible_host=10.10.20.176
 
 
-[iosxr]
-server5 ansible_host=10.150.70.1 ansible_ssh_pass=password
-
-[iosxe]
-server6 ansible_host=10.160.40.3 ansible_port=77
-
-[asa]
-server3 ansible_host=10.160.40.1 ansible_port=22 ansible_user=root
-server4 ansible_host=10.160.40.2 ansible_port=4300 ansible_user=root
+[nxos:vars]
+ansible_connection: network_cli
+ansible_network_os: nxos
+ansible_ssh_pass: "cisco12345"
+ansible_ssh_user: "cisco"
+ansible_become_password: "cisco12345"
