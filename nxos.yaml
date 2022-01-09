@@ -18,6 +18,7 @@
   connection: network_cli
   
   tasks: 
+
     
 
     - name: "config from cfg file"

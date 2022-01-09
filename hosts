@@ -12,6 +12,7 @@ iosxr
 [nxos]
 #server1 ansible_host=192.168.10.1 ansible_port=1600 ansible_python_interpreter="/home/taha/ansible/bin/python"
 #server2 ansible_host=192.168.0.2 ansible_port=1800
+
 lct_leaf1 ansible_host=10.10.20.173 #ansible_ssh_pass=Admin_1234! ansible_ssh_user=admin
 lct_leaf2 ansible_host=10.10.20.174
 imam_leaf1 ansible_host=10.10.20.175
