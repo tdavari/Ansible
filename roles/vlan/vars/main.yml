@@ -1,0 +1,53 @@
+---
+##################################
+profile: &profile 'vxlan'     # vlan or vxlan
+vlan_name: &vlan_name '555=999'
+vlan_id: &vlan_id '206'
+vni: &vni '1086666'
+
+lct_leaf1_port: &lct_leaf1_port  ['eth1/8','po89']
+lct_leaf2_port: &lct_leaf2_port []
+
+imam_leaf1_port: &imam_leaf1_port ['po89','eth1/9']
+imam_leaf2_port: &imam_leaf2_port []
+##################################
+
+switches:
+  - hostname: lct_leaf1
+    profile: *profile
+    vlans:
+      - number: *vlan_id
+        name: *vlan_name
+        vni: *vni
+        downlinks: *lct_leaf1_port
+    
+
+  - hostname: lct_leaf2
+    profile: *profile
+    vlans:
+      - number: *vlan_id
+        name: *vlan_name
+        vni: *vni
+        downlinks: *lct_leaf2_port
+    
+######################################
+
+  - hostname: imam_leaf1
+    profile: *profile
+    vlans:
+      - number: *vlan_id
+        name: *vlan_name
+        vni: *vni
+        downlinks: *imam_leaf1_port
+
+
+
+  - hostname: imam_leaf2
+    profile: *profile
+    vlans:
+      - number: *vlan_id
+        name: *vlan_name
+        vni: *vni
+        downlinks: *imam_leaf2_port
+
+#######################################

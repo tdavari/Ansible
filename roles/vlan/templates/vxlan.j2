@@ -1,0 +1,34 @@
+#Config for {{ item.hostname }}
+
+{% for vlan in item.vlans %}
+vlan {{ vlan.number }}
+ name {{ vlan.name }}
+ vn-segment {{ vlan.vni }}
+#
+{% endfor %}
+{% for vlan in item.vlans %}
+{% for downlink in vlan.downlinks %}
+interface {{ downlink }}
+  switchport trunk allowed vlan add {{ vlan.number }}
+#
+{% endfor %}
+{% endfor %}
+
+{% for vlan in item.vlans %}
+interface nve1
+  member vni {{ vlan.vni }}
+    ingress-replication protocol bgp
+#
+{% endfor %}
+
+{% for vlan in item.vlans %}
+evpn
+  vni {{ vlan.vni }} l2
+    rd auto
+    route-target import auto
+    route-target export auto
+#
+{% endfor %}
+
+
+

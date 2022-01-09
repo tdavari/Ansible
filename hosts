@@ -15,7 +15,7 @@ iosxr
 lct_leaf1 ansible_host=10.10.20.173 #ansible_ssh_pass=Admin_1234! ansible_ssh_user=admin
 lct_leaf2 ansible_host=10.10.20.174
 imam_leaf1 ansible_host=10.10.20.175
-imam_leaf2 ansible_host=10.10.20.176
+imam_leaf2 ansible_host=10.10.20.171
 
 
 [nxos:vars]
